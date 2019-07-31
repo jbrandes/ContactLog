@@ -14,7 +14,7 @@ def contact():
         f.write("\n")
         f.write("Email: " + email)
         f.write("\n")
-        with open('contactlist.json', 'w') as outfile:
+        with open('contactlist.json', 'a') as outfile:
             json.dump({'name':name, 'Phone':phone, 'Email': email}, outfile)
         
 
