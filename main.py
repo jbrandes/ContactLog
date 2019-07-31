@@ -11,7 +11,7 @@ def contact():
         f.write("\n")
         f.write("email: " + email)
 
-f = open('contacts.txt', 'w')
+f = open('contacts.txt', 'a')
 print("Welcome to your contact directory.")
 print("Would you like to enter a new name into the directory? ")
 answer = input()
