@@ -1,4 +1,5 @@
 import io
+import json
 
 
 def contact():
@@ -9,13 +10,18 @@ def contact():
         f.write("\n")
         f.write("Name: " + name)
         f.write("\n")
-        f.write ("phone: " + str(phone))
+        f.write ("Phone: " + str(phone))
         f.write("\n")
-        f.write("email: " + email)
+        f.write("Email: " + email)
         f.write("\n")
-        return json.dumps("contacts.json")
+        with open('contactlist.json', 'w') as outfile:
+            json.dump({'name':name, 'Phone':phone, 'Email': email}, outfile)
+        
 
 f = open('contacts.txt', 'a')
+
+    
+
 print("Welcome to your contact directory.")
 print("Would you like to enter a new name into the directory? ")
 answer = input()
