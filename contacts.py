@@ -27,6 +27,6 @@ print("Would you like to enter a new name into the directory? ")
 answer = input()
 if answer == "no":
     print("Thanks for using our program.")
-if answer == "yes":
+else:
     contact()
     f.close()
