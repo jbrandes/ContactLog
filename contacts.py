@@ -1,5 +1,8 @@
 import io
 import json
+import requests
+import sqlite3
+
 
 
 def contact():
@@ -16,6 +19,12 @@ def contact():
         f.write("\n")
         with open('contactlist.json', 'a') as outfile:
             json.dump({'Name':name, 'Phone':phone, 'Email': email}, outfile)
+
+def sqldb():
+
+        conn = sqlite3.connect('test.db')
+        c = conn.cursor()
+        c.execute("CREATE TABLE IF NONE EXISTS contacts ( data json)")
         
 
 f = open('contacts.txt', 'a')
